@@ -25,3 +25,11 @@ if hist_button: # al hacer clic en el botón
     # mostrar un gráfico Plotly interactivo
     st.plotly_chart(fig, use_container_width=True)
 
+build_barchart = st.checkbox('Construir un gráfico de barras ')
+
+if build_barchart: # si la casilla de verificación está seleccionada
+    st.write('Construir un gráfico de barras para la columna modelo')
+
+    fig = px.bar(car_data, x="model", y="price")
+
+    st.plotly_chart(fig, use_container_width= True)
